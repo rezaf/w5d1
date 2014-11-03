@@ -1,0 +1,28 @@
+<form action="<%= user_goals_url(@user) %>" method="POST">
+  <input type="hidden"
+         name="authenticity_token"
+         value="<%= form_authenticity_token %>">
+  
+  <label>
+    goal
+    <input type="text"
+           name="goal[body]"
+           value="<%= @goal.body %>">
+  </label>
+  
+  <label>
+    private
+    <input type="radio"
+           name="goal[privacy]"
+           value="true">
+  </label>
+  
+  <label>
+    public
+    <input type="radio"
+           name="goal[privacy]"
+           value="false">
+  </label>
+  
+  <input type="submit" value="Create Goal">
+</form>

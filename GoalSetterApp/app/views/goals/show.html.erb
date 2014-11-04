@@ -5,4 +5,4 @@
   <li><%= goal.body %></li>
 <% end %>
 
-<%= button_to "Create Goal", user_goals_url(@user.id) %>
+<%= link_to "Create Goal", new_user_goal_url(@user) %>

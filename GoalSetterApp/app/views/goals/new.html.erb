@@ -1,4 +1,4 @@
-<form action="<%= user_goals_url(@user) %>" method="POST">
+<form action="<%= user_goals_url(current_user.id) %>" method="POST">
   <input type="hidden"
          name="authenticity_token"
          value="<%= form_authenticity_token %>">
@@ -10,19 +10,11 @@
            value="<%= @goal.body %>">
   </label>
   
-  <label>
-    private
-    <input type="radio"
-           name="goal[privacy]"
-           value="true">
-  </label>
+  <input type="radio" name="goal[privacy]" id="privacy_yes" value="<%= true %>">
+  <label for="privacy_yes">yes_to_private</label>
   
-  <label>
-    public
-    <input type="radio"
-           name="goal[privacy]"
-           value="false">
-  </label>
+  <input type="radio" name="goal[privacy]" id="privacy_no" value="<%= false %>">
+  <label for="privacy_no">yes_to_public</label>
   
   <input type="submit" value="Create Goal">
 </form>

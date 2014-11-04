@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    fail
     @user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password]

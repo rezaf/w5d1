@@ -24,16 +24,16 @@ require 'rails_helper'
 feature "create goal process" do
   before(:each) do
     visit new_session_url
-    fill_in 'username', with: "hello"
-    fill_in 'password', with: "helloworld"
+    fill_in 'username', with: "hello2"
+    fill_in 'password', with: "helloworld2"
     # save_and_open_page
     click_on "Login"
     
-    # save_and_open_page
+    #save_and_open_page
     # p new_user_goal_url(user_id: 1)
     click_on "Create Goal"
     fill_in 'goal', with: "my new goal"
-    choose 'private'
+    choose 'yes_to_private'
     click_on "Create Goal"
   end
   
